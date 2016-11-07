@@ -14,6 +14,7 @@ else:
     text = open('running.txt')
     str = text.read()
     for line in str.splitlines():
+        if 'STDIN' in line: continue
         print 'qdel ' + line.split('.')[0]
         os.system('qdel ' + line.split('.')[0])
     
